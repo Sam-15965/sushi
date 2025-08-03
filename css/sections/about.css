@@ -1,0 +1,189 @@
+.about-us {
+    display: flex;
+    min-height: 120px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.about-us::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    z-index: 1;
+}
+
+.about-us > * {
+    position: relative;
+    z-index: 2;
+}
+
+.about-us__image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-primary);
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-us__image div {
+    padding: var(--space-xl) var(--space-3xl);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all var(--transition-normal);
+}
+
+.about-us__image div:hover {
+    transform: scale(1.02);
+}
+
+.about-us__image-sushi3 {
+    border-bottom: 8px solid var(--bg-secondary);
+    background-image: url("../../assets/about_bg1.png");
+    position: relative;
+}
+
+.about-us__image-sushi2 {
+    background-image: url("../../assets/about_bg2.png");
+    position: relative;
+}
+
+.about-us__image-sushi3 img {
+    width: 14.0625rem;
+    height: 12.5rem;
+    object-fit: contain;
+    transition: all var(--transition-normal);
+    filter: drop-shadow(var(--shadow-md));
+}
+
+.about-us__image-sushi2 img {
+    width: 15rem;
+    height: 10rem;
+    object-fit: contain;
+    transition: all var(--transition-normal);
+    filter: drop-shadow(var(--shadow-md));
+}
+
+.about-us__image div:hover img {
+    transform: scale(1.05);
+}
+
+.about-us__buttons {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: var(--space-sm) var(--space-xl);
+    min-height: 4rem;
+    background: linear-gradient(135deg, var(--text-primary), var(--gray-800));
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    border: 0;
+    outline: 0;
+    color: var(--text-inverse);
+    font-family: var(--plus-jakarta-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.about-us__buttons:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    transform: translateY(-50%) translateX(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.about-us__buttons img {
+    object-fit: contain;
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: all var(--transition-normal);
+}
+
+.about-us__buttons:hover img {
+    transform: translateX(4px);
+}
+
+.about-us__content {
+    padding: var(--space-3xl);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 1024px) {
+    .about-us {
+        flex-direction: column;
+    }
+
+    .about-us__image {
+        flex-direction: row;
+    }
+
+    .about-us__image-sushi3 {
+        border-bottom: none;
+        border-right: 8px solid var(--bg-secondary);
+    }
+
+    .about-us__button {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .about-us__image {
+        flex-direction: column;
+    }
+
+    .about-us__image-sushi3 {
+        border-bottom: 8px solid var(--bg-secondary);
+        border-right: none;
+    }
+
+    .about-us__button {
+        display: block;
+        top: 47%;
+    }
+    
+    .about-us__content {
+        padding: var(--space-2xl);
+    }
+}
+
+@media (max-width: 550px) {
+    .about-us__image-sushi2 img,
+    .about-us__image-sushi3 img {
+        width: 50%;
+        height: 10rem;
+        object-fit: contain;
+    }
+
+    .about-us__image div {
+        padding: var(--space-xl);
+    }
+
+    .about-us__button {
+        top: 44%;
+        padding: var(--space-sm) var(--space-lg);
+        font-size: 0.875rem;
+    }
+
+    .about-us__content {
+        padding: var(--space-xl);
+    }
+}
